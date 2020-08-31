@@ -1,2 +1,2 @@
 # README
-This Ruby project is a sample projectthat I made to get familar with Ruby on Rails.
+This Ruby project is a sample projectthat I made to get familar with Ruby on Rails. The project can be tested locally on any local server.
