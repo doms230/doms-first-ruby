@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="articles.scss" rel="stylesheet">
+
+    <title>Listing Articles</title>
+  </head>
+  <body>
+  <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+    <h5 class="my-0 mr-md-auto font-weight-normal">Articles</h5>
+    <%= link_to 'New article', new_article_path %> 
+  </div>
+
+  <div class="container-fluid" >
+  <table>
+   
+    <% @articles.each do |article| %>
+      <br>
+      <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title"><%= article.title %></h5>
+        <p class="card-text"><%= article.text %></p>
+        <a href="#" class="card-link"> <%= link_to 'Show', article_path(article) %> </a>
+        <a href="#" class="card-link"> <%= link_to 'Edit', edit_article_path(article) %> </a>
+        <a href="#" class="card-link"><%= link_to 'Delete', article_path(article),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %></a>
+      </div>
+    </div>
+    <% end %>
+  </table>
+  </div>
